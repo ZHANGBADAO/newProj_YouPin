@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/*
+<header>    头标签
+<nav>   导航标签
+<section>   表示文档的结构、栏目(写外围大结构)
+<article>   文章标签
+<aside>     侧边栏导航
+<footer>    页脚
+<mark>  凸显文字(行元素)
+*/
+* {
+  margin: 0;
+  padding: 0; }
+
+.margin {
+  width: 1150px;
+  margin: 0 auto; }
+
+header {
+  padding-bottom: 10px; }
+  header .logo {
+    float: left;
+    margin-top: 16px; }
+    header .logo img {
+      width: 156px;
+      height: 42px; }
+  header .function_area {
+    float: right;
+    margin-top: 18px; }
+    header .function_area .search_box {
+      float: left;
+      background: #F8F8F8;
+      border-radius: 17px;
+      position: relative; }
+      header .function_area .search_box #hot_list {
+        position: absolute;
+        left: 6px;
+        top: 36px;
+        background: #fff;
+        z-index: 100;
+        width: 245px;
+        height: 200px;
+        overflow-y: scroll;
+        display: none; }
+        header .function_area .search_box #hot_list li {
+          float: none;
+          height: 25px;
+          font: 14px/25px "";
+          padding-left: 10px; }
+          header .function_area .search_box #hot_list li:hover {
+            background: #ECECEC; }
+      header .function_area .search_box #search_word {
+        float: left;
+        background: #F8F8F8;
+        width: 170px;
+        height: 34px;
+        box-sizing: border-box;
+        padding-left: 16px;
+        border-radius: 17px;
+        border: 0;
+        outline: medium; }
+      header .function_area .search_box img {
+        float: left;
+        width: 19px;
+        height: 18px;
+        margin: 8px 13px 0 0; }
+    header .function_area .btn {
+      float: left;
+      margin-top: 9px; }
+      header .function_area .btn li {
+        float: left; }
+        header .function_area .btn li.download_app {
+          position: relative; }
+          header .function_area .btn li.download_app img {
+            position: absolute;
+            z-index: 100;
+            left: -25px;
+            top: 34px;
+            display: none; }
+          header .function_area .btn li.download_app:hover img {
+            display: block; }
+        header .function_area .btn li a {
+          display: block;
+          margin: 0 22px; }
+        header .function_area .btn li:first-child a {
+          width: 14px;
+          height: 20px;
+          background: url(../img/icon_bg.png) no-repeat;
+          background-size: auto 200px;
+          background-position: -38px -84px;
+          margin-left: 31px; }
+        header .function_area .btn li:nth-child(2) a {
+          width: 17px;
+          height: 19px;
+          background: url(../img/icon_bg.png) no-repeat;
+          background-size: auto 200px;
+          background-position: 0px -84px; }
+        header .function_area .btn li:nth-child(3) a {
+          width: 21px;
+          height: 18px;
+          background: url(../img/icon_bg.png) no-repeat;
+          background-size: auto 200px;
+          background-position: -17px -84px; }
+
+nav {
+  height: 50px;
+  border: 1px solid #ECECEC;
+  background: #fff; }
+  nav ul {
+    float: left; }
+    nav ul .first_nav {
+      float: left;
+      margin-right: 44px;
+      box-sizing: border-box;
+      position: relative; }
+      nav ul .first_nav:nth-child(3) ul {
+        display: none;
+        position: absolute;
+        left: -144px;
+        top: 51px;
+        z-index: 100;
+        width: 1150px;
+        height: 50px;
+        background: #F8F8F8; }
+        nav ul .first_nav:nth-child(3) ul li {
+          float: left;
+          font: 12px/50px "";
+          margin: 0 30px; }
+          nav ul .first_nav:nth-child(3) ul li a {
+            color: #000000; }
+            nav ul .first_nav:nth-child(3) ul li a:hover {
+              color: #E74C3C; }
+      nav ul .first_nav:nth-child(4) ul {
+        display: none;
+        position: absolute;
+        left: -244px;
+        top: 51px;
+        z-index: 100;
+        width: 1150px;
+        height: 50px;
+        background: #F8F8F8; }
+        nav ul .first_nav:nth-child(4) ul li {
+          float: left;
+          font: 12px/50px "";
+          margin: 0 30px; }
+          nav ul .first_nav:nth-child(4) ul li a {
+            color: #000000; }
+            nav ul .first_nav:nth-child(4) ul li a:hover {
+              color: #E74C3C; }
+      nav ul .first_nav:nth-child(5) ul {
+        display: none;
+        position: absolute;
+        left: -344px;
+        top: 51px;
+        z-index: 100;
+        width: 1150px;
+        height: 50px;
+        background: #F8F8F8; }
+        nav ul .first_nav:nth-child(5) ul li {
+          float: left;
+          font: 12px/50px "";
+          margin: 0 30px; }
+          nav ul .first_nav:nth-child(5) ul li a {
+            color: #000000; }
+            nav ul .first_nav:nth-child(5) ul li a:hover {
+              color: #E74C3C; }
+      nav ul .first_nav:hover {
+        border-bottom: 1px solid #E74C3C; }
+      nav ul .first_nav:hover a {
+        color: #E74C3C; }
+      nav ul .first_nav a {
+        font: 14px/50px "微软雅黑";
+        color: #000; }
+  nav .KeFu {
+    float: right;
+    font: 14px/50px "微软雅黑";
+    color: #000; }
+
+#main .shopping_car {
+  padding-bottom: 50px; }
+  #main .shopping_car .title {
+    padding-top: 60px;
+    border-bottom: 1px dashed #666666;
+    padding-bottom: 60px; }
+    #main .shopping_car .title p {
+      float: left;
+      font: 20px/20px ""; }
+  #main .shopping_car .buy_lists ul {
+    margin-bottom: 21px; }
+    #main .shopping_car .buy_lists ul li {
+      float: left; }
+      #main .shopping_car .buy_lists ul li:nth-child(1) {
+        margin: 60px 0 0 20px; }
+      #main .shopping_car .buy_lists ul li:nth-child(2) {
+        margin: 24px 0 0 60px;
+        width: 366px; }
+        #main .shopping_car .buy_lists ul li:nth-child(2) dl dt {
+          float: left; }
+          #main .shopping_car .buy_lists ul li:nth-child(2) dl dt a img {
+            width: 80px; }
+        #main .shopping_car .buy_lists ul li:nth-child(2) dl dd {
+          float: left;
+          margin-top: 12px;
+          margin-left: 60px; }
+          #main .shopping_car .buy_lists ul li:nth-child(2) dl dd h4 {
+            font: 14px/22px "";
+            font-weight: 500;
+            margin-bottom: 8px; }
+          #main .shopping_car .buy_lists ul li:nth-child(2) dl dd span {
+            font: 12px/14px ""; }
+          #main .shopping_car .buy_lists ul li:nth-child(2) dl dd p {
+            font: 12px/14px ""; }
+      #main .shopping_car .buy_lists ul li:nth-child(3) {
+        margin: 55px 0 0 100px; }
+      #main .shopping_car .buy_lists ul li:nth-child(4) {
+        margin: 55px 0 0 100px; }
+        #main .shopping_car .buy_lists ul li:nth-child(4) input {
+          float: left; }
+        #main .shopping_car .buy_lists ul li:nth-child(4) [type="button"] {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #ECECEC;
+          background: #FFFFFF;
+          cursor: pointer;
+          z-index: 10; }
+        #main .shopping_car .buy_lists ul li:nth-child(4) .count {
+          width: 45px;
+          height: 20px;
+          border: 0;
+          text-align: center; }
+      #main .shopping_car .buy_lists ul li:nth-child(5) {
+        margin: 55px 0 0 100px;
+        width: 60px; }
+      #main .shopping_car .buy_lists ul li:nth-child(6) {
+        height: 40px;
+        border-left: 1px dashed #666666;
+        margin: 40px 0 0 100px; }
+        #main .shopping_car .buy_lists ul li:nth-child(6) b {
+          background: url(../img/iron_man/delete.png);
+          width: 18px;
+          height: 18px;
+          display: block;
+          float: left;
+          margin: 10px 0 0px 17px; }
+  #main .shopping_car .jieSuan {
+    height: 50px;
+    background: #F8F8F8; }
+    #main .shopping_car .jieSuan input:nth-child(1) {
+      float: left;
+      margin: 20px 0 0 20px; }
+    #main .shopping_car .jieSuan b:nth-child(2) {
+      float: left;
+      margin: 20px 0 0 10px; }
+    #main .shopping_car .jieSuan dl {
+      float: right; }
+      #main .shopping_car .jieSuan dl dt {
+        float: left; }
+        #main .shopping_car .jieSuan dl dt p {
+          padding-top: 16px; }
+          #main .shopping_car .jieSuan dl dt p span {
+            font: 18px/18px "";
+            color: #E74C3C; }
+      #main .shopping_car .jieSuan dl dd {
+        float: left;
+        margin-left: 35px; }
+        #main .shopping_car .jieSuan dl dd a {
+          display: block;
+          width: 180px;
+          height: 100%;
+          font: 20px/50px "";
+          text-align: center;
+          color: #FFFFFF;
+          background: #E74C3C; }
+
+#recommend_goods {
+  height: 500px;
+  background: #EFEFEF;
+  font: 20px/100px ""; }
+
+footer {
+  height: 140px;
+  background: #F8F8F8; }
+  footer .links {
+    padding-top: 29px;
+    padding-left: 69px;
+    margin-bottom: 39px; }
+    footer .links a {
+      display: block;
+      float: left;
+      margin-right: 77px;
+      color: #000000;
+      height: 20px;
+      line-height: 20px;
+      padding-left: 20px;
+      background: url(../img/icon_bg.png) no-repeat;
+      background-size: auto 200px; }
+      footer .links a:nth-child(1) {
+        background-position: 0 -136px; }
+      footer .links a:nth-child(2) {
+        background-position: -217px -135px; }
+      footer .links a:nth-child(3) {
+        background-position: -217px -135px; }
+      footer .links a:nth-child(4) {
+        background-position: -117px -135px; }
+  footer .LianXi p {
+    float: left;
+    padding-left: 48px; }
+    footer .LianXi p span {
+      display: inline-block;
+      height: 16px;
+      box-sizing: border-box;
+      padding: 0 20px;
+      border-right: 1px solid #000000;
+      font: 12px/16px ""; }
+  footer .LianXi dl {
+    float: right;
+    margin-right: 66px; }
+    footer .LianXi dl dt {
+      float: left;
+      margin-right: 22px; }
+    footer .LianXi dl dd {
+      float: left; }
+      footer .LianXi dl dd span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../img/icon_bg.png) no-repeat;
+        background-size: auto 200px;
+        background-position: -92px -107px; }
+
+/*# sourceMappingURL=shopping_car.css.map */
