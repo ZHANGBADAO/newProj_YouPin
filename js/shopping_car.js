@@ -163,4 +163,35 @@ $(function() {
 		);
 	});
 
+//点击按钮图片循环显示
+	let left=0;
+	$("#btn_right").click(function(){//右侧按钮
+		if (left==1150) {
+			return;
+		}else{
+			left=1150;
+			$("#pic_slide").animate(
+				{
+					left:-left+"px"
+				}
+			);
+			
+		};
+	});
+	$("#btn_left").click(function(){//左侧按钮
+		if (left==1150) {
+			left=0;
+			$("#pic_slide").animate(
+				{
+					left:-left+"px"
+				}
+			);
+		}else{
+			return;
+			
+		};
+	});
+
+
+
 });

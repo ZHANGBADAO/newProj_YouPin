@@ -44,19 +44,22 @@ $(function() {
 		$(this).children("ul").slideDown(500);
 	});
 	$("nav .margin ul li:nth-child(3)").mouseleave(function(){
-		$(this).children("ul").slideUp(500);
+		$(this).children("ul").css({display:"none"});
+//		$(this).children("ul").slideUp(500);
 	});
 	$("nav .margin ul li:nth-child(4)").mouseenter(function(){
 		$(this).children("ul").slideDown(500);
 	});
 	$("nav .margin ul li:nth-child(4)").mouseleave(function(){
-		$(this).children("ul").slideUp(500);
+		$(this).children("ul").css({display:"none"});
+//		$(this).children("ul").slideUp(500);
 	});
 	$("nav .margin ul li:nth-child(5)").mouseenter(function(){
 		$(this).children("ul").slideDown(500);
 	});
 	$("nav .margin ul li:nth-child(5)").mouseleave(function(){
-		$(this).children("ul").slideUp(500);
+		$(this).children("ul").css({display:"none"});
+//		$(this).children("ul").slideUp(500);
 	});
 	
 	//页面向下滚动,固定导航栏
@@ -88,5 +91,29 @@ $(function() {
 		$("#display_userName").children("span").html(saved_cookie);
 		//alert(saved_cookie);
 	};
+	
+	//倒计时
+	
+	let time_0611 = new Date(2017,5,15,11,55,50);
+	function daoJiShi(){
+		let now_time=new Date();
+		let time_cha=time_0611-now_time;
+		if (time_cha<=0) {
+			clearInterval(timer);
+			$("#hours").html(0);
+			$("#minutes").html(0);
+			$("#seconds").html(0);
+		}else{
+			let h=parseInt(time_cha/(1000*60*60));
+			let m=parseInt(time_cha%(1000*60*60)/(1000*60));
+			let s=parseInt(time_cha%(1000*60*60)%(1000*60)/1000);
+			$("#hours").html(h);
+			$("#minutes").html(m);
+			$("#seconds").html(s);
+		};
+	};
+	//设置定时器
+	let timer=setInterval(daoJiShi,500);
+		
 	
 });

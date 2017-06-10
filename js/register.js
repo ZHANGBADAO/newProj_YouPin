@@ -65,7 +65,7 @@ $(function() {
 	//账户名验证
 	$("#userName").focus(function() { //获取焦点 边框变色
 		$(this).css({
-			borderColor: "#000"
+			borderColor: "#9e9"
 		});
 	});
 	$("#userName").blur(function() { //失去焦点检查 用户名是否合法
@@ -77,13 +77,18 @@ $(function() {
 			$(this).css({
 				borderColor: "#f44"
 			});
+		}else{
+			$(this).prev().html("");
+			$(this).css({
+				borderColor: "#000"
+			});
 		};
-
+		
 	});
 	//密码验证
 	$("#userPass").focus(function() { //获取焦点 边框变色
 		$(this).css({
-			borderColor: "#000"
+			borderColor: "#9e9"
 		});
 	});
 	$("#userPass").blur(function() { //失去焦点检查 密码是否合法

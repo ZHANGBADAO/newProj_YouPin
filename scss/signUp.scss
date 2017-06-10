@@ -296,11 +296,17 @@ nav {
                 float: left;
                 outline: medium;
             }
-            img{
-                width:70px;
+            b{
+                width:95px;
                 height:36px;
-                border:1px solid #ECECEC;
                 float: left;
+                    box-sizing: border-box;
+    padding-top: 4px;
+                img{
+                    display: block;
+                    float: left;
+                    width:23px;
+                }
             }
         }
         #submit{

@@ -1,4 +1,3 @@
-
 //jquery代码
 $(function() {
 
@@ -80,13 +79,13 @@ $(function() {
 			});
 		};
 		//正则验证 用户名
-		let reg_userName=/^[a-zA-Z_]\w{5,14}$/;
-		if (reg_userName.test($(this).val())) {
+		let reg_userName = /^[a-zA-Z_]\w{5,14}$/;
+		if(reg_userName.test($(this).val())) {
 			$(this).prev().html("格式正确!");
 			$(this).prev().css({
 				color: "#6c6"
 			});
-		}else{
+		} else {
 			$(this).prev().html("账户名只能使用数字字母下划线，且数字不能开头，长度在6-15之间!");
 			$(this).prev().css({
 				color: "#f44"
@@ -112,14 +111,14 @@ $(function() {
 			$(this).css({
 				borderColor: "#f44"
 			});
-		}else{
-			let reg_userPass=/^[a-zA-Z_]\w{5,14}$/;
-			if (reg_userPass.test($(this).val())) {
+		} else {
+			let reg_userPass = /^[a-zA-Z_]\w{5,14}$/;
+			if(reg_userPass.test($(this).val())) {
 				$(this).prev().html("格式正确!");
 				$(this).prev().css({
 					color: "#6c6"
 				});
-			}else{
+			} else {
 				$(this).prev().html("密码只能使用数字字母下划线，且数字不能开头，长度在6-15之间!");
 				$(this).prev().css({
 					color: "#f44"
@@ -131,43 +130,72 @@ $(function() {
 		};
 
 	});
+	//验证码--------------------------------------------------
+	let yanZhengMa_value = "";
+	//显示验证码
+	function show_yanZhenMa() {
+		let arr = [];
+		let str = "";
+		for(let i = 49; i <= 57; i++) {
+			arr.push(i);
+		}
+		for(let i = 65; i <= 90; i++) {
+			arr.push(i);
+		}
+		for(let i = 97; i <= 122; i++) {
+			arr.push(i);
+		}
+		for(let j = 1; j <= 4; j++) {
+			let index = parseInt(Math.random() * arr.length);
+			str = str + "<img src='img/yanZhengMa/" + arr[index] + ".jpg'/>";
+			yanZhengMa_value += String.fromCharCode(arr[index]).toLowerCase();
+		}
+		$("#yanZhenMa_pic").html(str);
+	};
+	show_yanZhenMa();
+	$('#yanZhenMa_pic').click(function() {
+		yanZhengMa_value="";
+		show_yanZhenMa();
+	});
+	$("#yanZhenMa").blur(function() {
+
+		let num1 = $("#yanZhenMa").val().toLowerCase();
+		if(yanZhengMa_value == num1) {
+			$(this).prev().css({
+				color: "#9f9"
+			});
+			$(this).prev().html("验证码输入正确");
+		} else {
+			$(this).prev().css({
+				color: "red"
+			});
+			$(this).prev().html("验证码输入错误");
+		};
+		
+	});
 
 	//点击登陆按钮 在数据库查询是否存在用户名和密码
 	$("#submit").click(function() {
-		//console.log($("#userName").val());
-		//console.log($("#userPass").val());
-		$.post(
-			"php/signUp.php", {
-				userName: $("#userName").val(),
-				userPass: $("#userPass").val()
-			},
-			function(data) {
-				if(data == "true") {
-					alert("已被注册");
-					
-//					location.href = "index.html";
-				} else {
-					
-					alert("注册成功");
-					/*//账户名附近 出现错误提示
-					$("#userName").prev().html("账户名或密码错误!");
-					$("#userName").prev().css({
-						color: "#f44"
-					});
-					$("#userName").css({
-						borderColor: "#f44"
-					});
-					//密码附近 出现错误提示
-					$("#userPass").prev().html("账户名或密码错误!");
-					$("#userPass").prev().css({
-						color: "#f44"
-					});
-					$("#userPass").css({
-						borderColor: "#f44"
-					});*/
+		if($("#userName").val() == "" || $("#userPass").val() == "" || $("#yzm_tip").html() !="验证码输入正确") {
+			alert("请输入用户名,密码,验证码");
+		} else {
+			$.post(
+				"php/signUp.php", {
+					userName: $("#userName").val(),
+					userPass: $("#userPass").val()
+				},
+				function(data) {
+					if(data == "true") {
+						alert("已被注册");
+
+					} else {
+
+						alert("注册成功");
+
+					}
 				}
-			}
-		);
+			);
+		};
 
 	});
 

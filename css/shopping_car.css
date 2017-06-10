@@ -275,7 +275,45 @@ nav {
 #recommend_goods {
   height: 500px;
   background: #EFEFEF;
-  font: 20px/100px ""; }
+  margin-bottom: 100px; }
+  #recommend_goods h4 {
+    font: 20px/96px "";
+    margin-left: 14px; }
+  #recommend_goods .pic_box {
+    height: 300px;
+    position: relative;
+    overflow: hidden; }
+    #recommend_goods .pic_box #btn_left {
+      position: absolute;
+      left: 0;
+      top: 121px;
+      cursor: pointer;
+      z-index: 5; }
+    #recommend_goods .pic_box #btn_right {
+      position: absolute;
+      right: 0;
+      top: 121px;
+      cursor: pointer;
+      z-index: 5; }
+    #recommend_goods .pic_box #pic_slide {
+      height: 100%;
+      width: 2300px;
+      position: absolute;
+      left: 0;
+      display: flex; }
+      #recommend_goods .pic_box #pic_slide li {
+        width: 200px;
+        padding-top: 30px;
+        margin: 0 15px;
+        background: #fff; }
+        #recommend_goods .pic_box #pic_slide li img {
+          display: block;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto; }
+        #recommend_goods .pic_box #pic_slide li p {
+          text-align: center;
+          font: 14px/30px ""; }
 
 footer {
   height: 140px;
