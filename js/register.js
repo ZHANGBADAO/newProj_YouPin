@@ -77,13 +77,13 @@ $(function() {
 			$(this).css({
 				borderColor: "#f44"
 			});
-		}else{
+		} else {
 			$(this).prev().html("");
 			$(this).css({
 				borderColor: "#000"
 			});
 		};
-		
+
 	});
 	//密码验证
 	$("#userPass").focus(function() { //获取焦点 边框变色
@@ -100,6 +100,11 @@ $(function() {
 			$(this).css({
 				borderColor: "#f44"
 			});
+		} else {
+			$(this).prev().html("");
+			$(this).css({
+				borderColor: "#000"
+			});
 		};
 
 	});
@@ -108,39 +113,44 @@ $(function() {
 	$("#submit").click(function() {
 		//console.log($("#userName").val());
 		//console.log($("#userPass").val());
-		$.post(
-			"php/login.php", {
-				userName: $("#userName").val(),
-				userPass: $("#userPass").val()
-			},
-			function(data) {
-				if(data == "true") {
-					location.href = "index.html";
-					//保存cookie
-					saveCookie("userName",$("#userName").val(),1);
-					saveCookie("userPass",$("#userPass").val(),1);
-					
-				} else {
-					//账户名附近 出现错误提示
-					$("#userName").prev().html("账户名或密码错误!");
-					$("#userName").prev().css({
-						color: "#f44"
-					});
-					$("#userName").css({
-						borderColor: "#f44"
-					});
-					//密码附近 出现错误提示
-					$("#userPass").prev().html("账户名或密码错误!");
-					$("#userPass").prev().css({
-						color: "#f44"
-					});
-					$("#userPass").css({
-						borderColor: "#f44"
-					});
-				}
-			}
-		);
 
+		if($("#userName").val() == "" || $("#userPass").val() == "" || $("#yzm_tip").html() != "验证码输入正确") {
+			alert("请输入用户名,密码,验证码");
+		} else {
+
+			$.post(
+				"php/login.php", {
+					userName: $("#userName").val(),
+					userPass: $("#userPass").val()
+				},
+				function(data) {
+					if(data == "true") {
+						location.href = "index.html";
+						//保存cookie
+						saveCookie("userName", $("#userName").val(), 1);
+						saveCookie("userPass", $("#userPass").val(), 1);
+
+					} else {
+						//账户名附近 出现错误提示
+						$("#userName").prev().html("账户名或密码错误!");
+						$("#userName").prev().css({
+							color: "#f44"
+						});
+						$("#userName").css({
+							borderColor: "#f44"
+						});
+						//密码附近 出现错误提示
+						$("#userPass").prev().html("账户名或密码错误!");
+						$("#userPass").prev().css({
+							color: "#f44"
+						});
+						$("#userPass").css({
+							borderColor: "#f44"
+						});
+					}
+				}
+			);
+		};
 	});
 
 });
