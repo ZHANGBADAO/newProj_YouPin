@@ -75,9 +75,17 @@ $(function() {
 			for(let i in result) { //循环显示每个商品
 
 				$(".buy_lists").append(
-					'<ul class="clear"><li><input type="checkbox" name="check" id="check" value="" checked="true" /></li><li class="li2"><dl><dt><a href=""><img src="' + result[i].goodsImg + '" alt="" /></a></dt><dd><h4>' + result[i].goodsName + '</h4><span>颜色：钢铁侠MARK44反浩克头盔</span><p>品牌商发货.    商品编号:<b class="goodsId">' + result[i].goodsId + '</b></p></dd></dl></li><li><span>￥<b class="danJia">' + result[i].goodsPrice + '</b>.00</span></li><li><input type="button" name="reduce" class="reduce" value="-" /><input type="text" name="count" class="count" value="' + result[i].goodsSum + '" /><input type="button" name="add" class="add" value="+" /></li><li><span class="xiaoJi">￥' + parseInt(result[i].goodsPrice) * parseInt(result[i].goodsSum) + '.00</span></li><li><b class="delete"></b></li></ul>'
+					'<ul class="clear"><li><input type="checkbox" name="check" id="check" value="" checked="true" /></li><li class="li2"><dl><dt><a href=""><img src="' + result[i].goodsImg + '" alt="" /></a></dt><dd><h4>' + result[i].goodsName + '</h4><span>颜色：钢铁侠MARK44反浩克头盔</span><p>品牌商发货.    商品编号:<b class="goodsId">' + result[i].goodsId + '</b></p></dd></dl></li><li><span>￥<b class="danJia">' + result[i].goodsPrice + '</b>.00</span></li><li><input type="button" name="reduce" class="reduce" value="-" /><input type="text" name="count" class="count" value="' + result[i].goodsSum + '" /><input type="button" name="add" class="add" value="+" /></li><li>￥<span class="xiaoJi">' + parseInt(result[i].goodsPrice) * parseInt(result[i].goodsSum) + '</span>.00</li><li><b class="delete"></b></li></ul>'
 				);
+			};
+			//更改总价-------------------
+			let zonJia=0;
+			for (let i=0 ; i<$(".xiaoJi").length ; i++) {
+				zonJia+=parseInt($(".xiaoJi")[i].innerHTML)
+				
 			}
+			$("#zonjia").html("￥"+zonJia+".00");
+//			console.log($(".xiaoJi")[0].innerHTML);
 		}
 	);
 
@@ -96,6 +104,13 @@ $(function() {
 				goodsCount: new_count
 			},
 			function(data) {
+				//更改总价-------------------
+				let zonJia=0;
+				for (let i=0 ; i<$(".xiaoJi").length ; i++) {
+					zonJia+=parseInt($(".xiaoJi")[i].innerHTML)
+					
+				}
+				$("#zonjia").html("￥"+zonJia+".00");
 				/*if (data==1) {
 					alert("修改成功");
 				}else{
@@ -119,6 +134,13 @@ $(function() {
 				goodsCount: new_count
 			},
 			function(data) {
+				//更改总价-------------------
+				let zonJia=0;
+				for (let i=0 ; i<$(".xiaoJi").length ; i++) {
+					zonJia+=parseInt($(".xiaoJi")[i].innerHTML)
+					
+				}
+				$("#zonjia").html("￥"+zonJia+".00");
 				/*if (data==1) {
 					alert("修改成功");
 				}else{
@@ -150,11 +172,19 @@ $(function() {
 							for(let i in result) { //循环显示每个商品
 
 								$(".buy_lists").append(
-									'<ul class="clear"><li><input type="checkbox" name="check" id="check" value="" checked="true" /></li><li class="li2"><dl><dt><a href=""><img src="' + result[i].goodsImg + '" alt="" /></a></dt><dd><h4>' + result[i].goodsName + '</h4><span>颜色：钢铁侠MARK44反浩克头盔</span><p>品牌商发货.    商品编号:<b class="goodsId">' + result[i].goodsId + '</b></p></dd></dl></li><li><span>￥<b class="danJia">' + result[i].goodsPrice + '</b>.00</span></li><li><input type="button" name="reduce" class="reduce" value="-" /><input type="text" name="count" class="count" value="' + result[i].goodsSum + '" /><input type="button" name="add" class="add" value="+" /></li><li><span class="xiaoJi">￥' + parseInt(result[i].goodsPrice) * parseInt(result[i].goodsSum) + '.00</span></li><li><b class="delete"></b></li></ul>'
+									'<ul class="clear"><li><input type="checkbox" name="check" id="check" value="" checked="true" /></li><li class="li2"><dl><dt><a href=""><img src="' + result[i].goodsImg + '" alt="" /></a></dt><dd><h4>' + result[i].goodsName + '</h4><span>颜色：钢铁侠MARK44反浩克头盔</span><p>品牌商发货.    商品编号:<b class="goodsId">' + result[i].goodsId + '</b></p></dd></dl></li><li><span>￥<b class="danJia">' + result[i].goodsPrice + '</b>.00</span></li><li><input type="button" name="reduce" class="reduce" value="-" /><input type="text" name="count" class="count" value="' + result[i].goodsSum + '" /><input type="button" name="add" class="add" value="+" /></li><li>￥<span class="xiaoJi">' + parseInt(result[i].goodsPrice) * parseInt(result[i].goodsSum) + '</span>.00</li><li><b class="delete"></b></li></ul>'
 								);
+							};
+							//更改总价-------------------
+							let zonJia=0;
+							for (let i=0 ; i<$(".xiaoJi").length ; i++) {
+								zonJia+=parseInt($(".xiaoJi")[i].innerHTML)
+								
 							}
+							$("#zonjia").html("￥"+zonJia+".00");
 						}
 					);
+					
 //-----------------------------------------
 				} else {
 					alert("删除失败");

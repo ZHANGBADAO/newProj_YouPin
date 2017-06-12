@@ -2,44 +2,44 @@ var gulp=require("gulp");
 
 gulp.task("copy-html",function(){
 	gulp.src("*.html")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin"));
 });
 
 gulp.task("copy-js",function(){
 	gulp.src("js/*.js")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/js"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/js"));
 });
 
 gulp.task("copy-css",function(){
 	gulp.src("css/*.css")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/css"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/css"));
 });
 
 gulp.task("copy-php",function(){
 	gulp.src("php/*.php")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/php"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/php"));
 });
 
 gulp.task("copy-php_root",function(){
 	gulp.src("*.php")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin"));
 });
 
 gulp.task("copy-img",function(){
 	gulp.src("img/*.{png,jpg,gif}")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/img"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/img"));
 });
 gulp.task("copy-img-sound",function(){
 	gulp.src("img/sound/*.{png,jpg,gif}")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/img/sound"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/img/sound"));
 });
 gulp.task("copy-img-ironMan",function(){
 	gulp.src("img/iron_man/*.{png,jpg,gif}")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/img/iron_man"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/img/iron_man"));
 });
 gulp.task("copy-img-yanZhengMa",function(){
 	gulp.src("img/yanZhengMa/*.{png,jpg,gif}")
-	.pipe(gulp.dest("C:/phpStudy/WWW/zxt/newProj_YouPin/img/yanZhengMa"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/zxt/newProj_YouPin/img/yanZhengMa"));
 });
 
 //同时执行上面的所有任务

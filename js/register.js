@@ -114,7 +114,7 @@ $(function() {
 		//console.log($("#userName").val());
 		//console.log($("#userPass").val());
 
-		if($("#userName").val() == "" || $("#userPass").val() == "" || $("#yzm_tip").html() != "验证码输入正确") {
+		if($("#userName").val() == "" || $("#userPass").val() == "") {
 			alert("请输入用户名,密码,验证码");
 		} else {
 
